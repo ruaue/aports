@@ -19,6 +19,8 @@ case "$CARCH" in
 esac
 
 build() {
+        aclocal
+        autoconf
 	./configure \
 		--build=$CBUILD \
 		--host=$CHOST \
@@ -40,5 +42,6 @@ package() {
 }
 
 sha512sums="
-0c8c369eec84b0c568f0067598bece6e3be9a0fbd977e443ae3b14a5a6d842a6086ceb5426a65f8c77204709655f148c1241193f1a928f8c12154a57e3548b34  libnftnl-1.2.6.tar.xz
+0c8c369eec84b0c568f0067598bece6e3be9a0fbd977e443ae3b14a5a6d842a6086ceb5426a65f8c77204709655f148c1241193f1a928f8c12154a57e3548b34  libnftnl_1.2.6.orig.tar.xz
+fe2f7bfb3d1f7d7ae6e575e32a2b3dcc3bfa8624160c6789518dd5b453d49619c74927b43806777e90d715b4a398b159dc33e446895cd26daa0457959c8ed5aa  0001-add-fullcone-expression-support.patch
 "
