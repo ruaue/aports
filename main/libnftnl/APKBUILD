@@ -39,6 +39,3 @@ package() {
 	make DESTDIR="$pkgdir" install
 }
 
-sha512sums="
-0c8c369eec84b0c568f0067598bece6e3be9a0fbd977e443ae3b14a5a6d842a6086ceb5426a65f8c77204709655f148c1241193f1a928f8c12154a57e3548b34  libnftnl-1.2.6.tar.xz
-"
