@@ -32,10 +32,11 @@ subpackages="
 	py3-$pkgname-pyc
 	py3-$pkgname:_py3:noarch
 	"
-source="https://netfilter.org/projects/nftables/files/nftables-$pkgver.tar.xz
+source="http://deb.debian.org/debian/pool/main/n/nftables/nftables_1.0.9.orig.tar.xz
 	nftables.confd
 	nftables.initd
 	nftables.nft
+        0001-nftables-add-fullcone-expression-support.patch 
 	"
 options="!check"
 
@@ -85,8 +86,9 @@ _py3() {
 }
 
 sha512sums="
-dc34099658e283d9fd4d06264b593710121074558305ea23ab298c5f6a6b564a826f186241b6e106fbaa4e11160cf77e68bb52b4ce401b28d8d2e403cd4b88e8  nftables-1.0.9.tar.xz
+dc34099658e283d9fd4d06264b593710121074558305ea23ab298c5f6a6b564a826f186241b6e106fbaa4e11160cf77e68bb52b4ce401b28d8d2e403cd4b88e8  nftables_1.0.9.orig.tar.xz
 5a298ea01df60b434791fea94306d5b14f7ce684329e4122cc78bb52d1c272fcc48b06eaae154fd082c05f7030792fe42e73814caf3c7be3c446bb265fe25642  nftables.confd
 93a4d3109e3b7d36bcd0901755e1ee4dba3b5555deddc5eecdee2ccbcce15c08f122bf8f1c879c3f696f6a5a13d283536a0ff5e1af82289c3263b6aeb9d116d0  nftables.initd
 2dfc81a204af6e9516f78df97603e320453679bd9d34e7e8376b110438bb4d406d571df5efcbb76a446cd4a456c8a497092933219286e41a67bbd1483b38af39  nftables.nft
+9651f36aff266d35ca8b803cba83ffe421239a68e7c8761c8ea9687675b6564aae9200b4c0288b3ff9a70ddfdbcc4ede717cf3d4e87e9dec0ef4adc8e4c167d1  0001-nftables-add-fullcone-expression-support.patch
 "
