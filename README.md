@@ -2,6 +2,5 @@
 
 alpine linux with nftables fullcone support
 
-# source code from 
-
+# credit
 https://github.com/fullcone-nat-nftables
