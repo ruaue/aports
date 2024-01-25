@@ -1,0 +1,50 @@
+# Contributor: Anon <danilagdn.2004@gmail.com>
+# Maintainer: Anon <danilagdn.2004@gmail.com>
+pkgname=sing-box
+pkgver=1.8.4
+pkgrel=0
+pkgdesc="The universal proxy platform"
+url="https://sing-box.sagernet.org/"
+arch="all"
+license="GPL-3.0-or-later with name use or association addition"
+makedepends="go"
+subpackages="$pkgname-openrc $pkgname-bash-completion $pkgname-fish-completion $pkgname-zsh-completion"
+options="!check"
+source="$pkgname-$pkgver.tar.gz::https://github.com/SagerNet/sing-box/archive/v$pkgver.tar.gz
+	$pkgname.initd
+	"
+_tags="with_gvisor,with_quic,with_wireguard,with_utls,with_reality_server"
+
+build() {
+	export CGO_CPPFLAGS="$CPPFLAGS"
+	export CGO_CFLAGS="$CFLAGS"
+	export CGO_CXXFLAGS="$CXXFLAGS"
+	export CGO_LDFLAGS="$LDFLAGS"
+
+	go build -v -trimpath -buildmode=pie -mod=readonly -modcacherw -tags "$_tags" \
+	-ldflags "-X \"github.com/sagernet/sing-box/constant.Version=$pkgver\" -s -w
+	-buildid= -linkmode=external" ./cmd/sing-box
+
+	install -d completions
+	go run ./cmd/sing-box completion bash   > completions/bash
+	go run ./cmd/sing-box completion fish   > completions/fish
+	go run ./cmd/sing-box completion zsh    > completions/zsh
+}
+
+
+package() {
+	install -Dm644 LICENSE                      -t "$pkgdir/usr/share/licenses/$pkgname"
+	install -Dm755 "$pkgname"                   -t "$pkgdir/usr/bin"
+	install -Dm644 "release/config/config.json" -t "$pkgdir/etc/$pkgname"
+	install -Dm755 "$srcdir/$pkgname.initd" 		"$pkgdir/etc/init.d/$pkgname"
+
+	install -Dm644 completions/bash "$pkgdir/usr/share/bash-completion/completions/$pkgname.bash"
+	install -Dm644 completions/fish "$pkgdir/usr/share/fish/vendor_completions.d/$pkgname.fish"
+	install -Dm644 completions/zsh  "$pkgdir/usr/share/zsh/site-functions/_$pkgname"
+
+}
+
+sha512sums="
+59c26d60421a9b4960498e881dd83fd07fb6bb5c1b56963b693a874a4767a8b45612ed5eb500e08c1491cf2b93734b3b0bc299b309bc5635825c701198ea3005  sing-box-1.8.0.tar.gz
+b90e16319d2d2827886219e8f420954060c6e003a88f523595da5f04fe0530f95c3fae89f60dec452a87804f479164dd29b57f1329b928cc3d641fd7ef174284  sing-box.initd
+"
