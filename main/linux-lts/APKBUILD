@@ -2,7 +2,7 @@
 
 _flavor=virt
 pkgname=linux-$_flavor
-pkgver=6.6.19
+pkgver=6.6.22
 case $pkgver in
 	*.*.*)	_kernver=${pkgver%.*};;
 	*.*) _kernver=$pkgver;;
@@ -23,6 +23,7 @@ source="https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/linux-$_kernver
 	0004-objtool-respect-AWK-setting.patch
 	0005-powerpc-config-defang-gcc-check-for-stack-protector-.patch
         0010-nftables-fullcone.patch
+        0001-tools-resolve_btfids-fix-build-with-musl-libc.patch
 	virt.x86_64.config
 	"
 subpackages="$pkgname-dev:_dev:$CBUILD_ARCH $pkgname-doc"
@@ -331,6 +332,7 @@ sha512sums="
 2956050bb332411d00a285e9656618f2e34b631492bbc19bef54d83a6e91b8531f4e18830b9313cfe52fbf8a8ca6fb76cf55b3ddd146ca3b977046cf2fd10cad  0004-objtool-respect-AWK-setting.patch
 4b16f15b47b5e5835b926126e39723f519290469517875cfb2d2b857a93ad1344f0d1ba4b255289e20f4da9c867647526b344f752981cee0a48c51577badac3f  0005-powerpc-config-defang-gcc-check-for-stack-protector-.patch
 549d7800f03ab1a5af197c6933485ca96668a8fe1177dfc16b21db7e066e13a0cc3ee126c48d21544146b25a320936a7a90c967744bb5451910113133b1f8938  0010-nftables-fullcone.patch
+c52f40d3c5316530698913e5fd79ea5f86b8abffd0ce0c4521bdc38f024ab51047b6b63ec9886758bead04565fb2c64243aa92259d9456f9f22d63662d0c85f9  0001-tools-resolve_btfids-fix-build-with-musl-libc.patch
 73b23141168e3d419259bd1e78c9423f7835a24acd2d74dd1301ab49b703975f156567a1d74632b2fe0ac7637aab82f37bb0546b112980b43316b78944b18720  virt.x86_64.config
-49cd0fb53ba6a3ad810fbd6a10a4ddf27a155b99a67418f138850e92822e8be00fce176e3ca9c0d586b8a0c0afd3909cc1651420b899ee3dc644d795cffa4634  patch-6.6.19.xz
+c8fa43287ef9b4c3e08d9b89f927b2220c3cd7d62b2643f6f098daee2fcfbc9d42a417f449cc311fea960651ba97a4c8cf823baaaa27024611874ee6bf466f86  patch-6.6.22.xz
 "
