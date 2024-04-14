@@ -23,6 +23,7 @@ source="https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/linux-$_kernver
 	0004-objtool-respect-AWK-setting.patch
 	0005-powerpc-config-defang-gcc-check-for-stack-protector-.patch
         0010-nftables-fullcone.patch
+        0011-net-tcp_brutal-make-it-as-a-built-in-kernel-module.patch
 	virt.x86_64.config
 	"
 subpackages="$pkgname-dev:_dev:$CBUILD_ARCH $pkgname-doc"
@@ -331,6 +332,7 @@ sha512sums="
 2956050bb332411d00a285e9656618f2e34b631492bbc19bef54d83a6e91b8531f4e18830b9313cfe52fbf8a8ca6fb76cf55b3ddd146ca3b977046cf2fd10cad  0004-objtool-respect-AWK-setting.patch
 4b16f15b47b5e5835b926126e39723f519290469517875cfb2d2b857a93ad1344f0d1ba4b255289e20f4da9c867647526b344f752981cee0a48c51577badac3f  0005-powerpc-config-defang-gcc-check-for-stack-protector-.patch
 549d7800f03ab1a5af197c6933485ca96668a8fe1177dfc16b21db7e066e13a0cc3ee126c48d21544146b25a320936a7a90c967744bb5451910113133b1f8938  0010-nftables-fullcone.patch
-73b23141168e3d419259bd1e78c9423f7835a24acd2d74dd1301ab49b703975f156567a1d74632b2fe0ac7637aab82f37bb0546b112980b43316b78944b18720  virt.x86_64.config
+2131456d5ea96664d915de4b089e91da1e47aa9fcc7a25d997e1964c1a624c0da88c7bf403b4a6ef9ec46fddf9e5cea51102cfd6d1a894189c708d9b9ca4d59c  0011-net-tcp_brutal-make-it-as-a-built-in-kernel-module.patch
+a9184eb28f13dd4738b31e2321dea4659724ca1f9452b0e0ee28e513ec2f9c9f7f457eba5cc68b14f7d1aaad5069557cbbe145dd300698f573b2e1eb37031c88  virt.x86_64.config
 7229fba0e25c4f9eb40a84547171fa18f64ca986afdd5f8a46c9bb64a4a6e3504959afca116a524cbfe294767b316978b821a9782c62d723083b3594118e3f6b  patch-6.6.26.xz
 "
