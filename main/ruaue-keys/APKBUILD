@@ -46,4 +46,6 @@ package() {
 	done
 }
 
-sha512sums=""apk@ruaue.com-65a20657.rsa.pub
+sha512sums="
+1699ca233203d9a60dc3dae25833ab4bee5828f534a6377de6cb1526279bc53ad012cc95bdcd13e723b18cff0722b25e52b25b6037f5e62d6b030b1132d38581  apk@ruaue.com-65a20657.rsa.pub
+"
