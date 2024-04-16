@@ -1,15 +1,15 @@
 # Maintainer: Natanael Copa <ncopa@alpinelinux.org>
-   2 pkgname=sevmonster-keys
+   2 pkgname=ruaue-keys
    3 pkgver=1
    4 pkgrel=0
-   5 pkgdesc="Public keys for alpine.sev.monster packages"
-   6 url="https://alpine.sev.monster"
+   5 pkgdesc="Public keys for repo.vyos.eu.org packages"
+   6 url="https://repo.vyos.eu.org"
    7 # we install arch specific keys to /etc so we cannot do arch=noarch
    8 arch="all"
    9 license="BSD-3-Clause"
   10 options="!check"
   11 
-  12 _arch_keys="x86_64:alpine@sev.monster-60eb1287.rsa.pub"
+  12 _arch_keys="x86_64:apk@ruaue.com-65a20657.rsa.pub"
   13 
   14 for _i in $_arch_keys; do
   15         source="$source ${_i#*:}"
@@ -47,4 +47,4 @@
   47 }
   48 
   49 sha512sums="
-  50 c36281116bad0c8c0c5e24b09366e9a238d68d7ead69167da8601e05951f895a007838e45d003aac1e5c10c3db52be6f4e2dc1d583f5eab3912ac26a8423819a  alpine@sev.monster-60eb1287.rsa.pub
+  50 c36281116bad0c8c0c5e24b09366e9a238d68d7ead69167da8601e05951f895a007838e45d003aac1e5c10c3db52be6f4e2dc1d583f5eab3912ac26a8423819a  apk@ruaue.com-65a20657.rsa.pub
