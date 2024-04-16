@@ -46,9 +46,4 @@ package() {
 	done
 }
 
-sha512sums="
-c36281116bad0c8c0c5e24b09366e9a238d68d7ead69167da8601e05951f895a007838e45d003aac1e5c10c3db52be6f4e2dc1d583f5eab3912ac26a8423819a  apk@ruaue.com-65a20657.rsa.pub
-"
-  48 
-  49 sha512sums="
-  50 c36281116bad0c8c0c5e24b09366e9a238d68d7ead69167da8601e05951f895a007838e45d003aac1e5c10c3db52be6f4e2dc1d583f5eab3912ac26a8423819a  apk@ruaue.com-65a20657.rsa.pub
+sha512sums=""apk@ruaue.com-65a20657.rsa.pub
