@@ -11,7 +11,7 @@ depends="abuild"
 source="$pkgname-$pkgver.tar.gz::https://github.com/eburghar/reposerve/archive/refs/tags/$pkgver.tar.gz"
 
 build() {
-  cargo build --release
+  cargo build --release -C target-feature=+crt-static -C link-self-contained=yes
 }
 
 check() {
