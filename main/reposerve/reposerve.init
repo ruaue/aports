@@ -1,0 +1,17 @@
+#!/sbin/openrc-run
+
+name=$RC_SVCNAME
+description="reposerve service"
+supervisor="supervise-daemon"
+command="/usr/bin/reposerve"
+command_args="--config /etc/reposerve.yaml"
+
+depend() {
+	after net dns 
+}
+
+reload() {
+	ebegin "Reloading $RC_SVCNAME"
+	/bin/kill -HUP $MAINPID
+	eend $?
+}
