@@ -21,7 +21,7 @@ check() {
 package() {
   install -Dm755 target/release/"$pkgname"   "$pkgdir"/usr/bin/"$pkgname"
   install -Dm644 "$srcdir/reposerve.yaml" -t "$pkgdir/etc/"
-	install -Dm755 "$srcdir/$pkgname.initd" 	 "$pkgdir/etc/init.d/$pkgname"
+  install -Dm755 "$srcdir/$pkgname.initd" 	 "$pkgdir/etc/init.d/$pkgname"
 
 }
 
