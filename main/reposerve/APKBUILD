@@ -6,12 +6,12 @@ pkgdesc="Simple alpine packages server for consuming and updating packages in CI
 url="https://git.itsufficient.me/rust/reposerve"
 arch="x86_64"
 license="ASL 2.0"
-makedepends="cargo clang-dev llvm-dev"
+makedepends="cargo clang-dev llvm-dev libc++-dev lld"
 depends="abuild"
-source="$pkgname-$pkgver.tar.gz::https://github.com/eburghar/reposerve/archive/refs/tags/$pkgver.tar.gz"
+source="$pkgname-$pkgver.tar.gz::https://github.com/ruaue/reposerve/archive/refs/tags/$pkgver.tar.gz"
 
 build() {
-  cargo build --release --features static
+  cargo  build --release 
 }
 
 check() {
@@ -26,5 +26,5 @@ package() {
 }
 
 sha512sums="
-d20c5fb5d9f769add480e4897f63565d8240005df9e7fa316a22a380c2eeac258e41476ec6936d0af4ea51e6f0639316448ba06c586ab08b3c321601fe3abb87  reposerve-0.5.0.tar.gz
+14e24927375c69d2e5c970a497183fdaaf05973ced8cfd5a4fa772be8de97a09b236c50b6b15040d154c90dc6de5a1a0c790b965a5a196247c9ec6408216ac84  reposerve-0.7.0.tar.gz
 "
