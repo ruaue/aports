@@ -1,7 +1,7 @@
 # Contributor: Anon <danilagdn.2004@gmail.com>
 # Maintainer: Anon <danilagdn.2004@gmail.com>
 pkgname=sing-box
-pkgver=1.8.12
+pkgver=1.8.13
 pkgrel=0
 pkgdesc="The universal proxy platform"
 url="https://sing-box.sagernet.org/"
@@ -45,6 +45,6 @@ package() {
 }
 
 sha512sums="
-b699a6dc3b946e22d174cbc2aa351812cd2ade689959b5b665b341491cf1e81616314705eb349da8728ba2765e204384fd300c791a3f2e73c25a1b51963d18d1  sing-box-1.8.12.tar.gz
+68b282cd2d0f2628e690a4993f942102bea3bb2c5f8d910720c54684a5daca1ec9a42c48ab3b5f05268f8c0c9830fc935606a40d438157b9163d11de7898e3bc  sing-box-1.8.13.tar.gz
 b90e16319d2d2827886219e8f420954060c6e003a88f523595da5f04fe0530f95c3fae89f60dec452a87804f479164dd29b57f1329b928cc3d641fd7ef174284  sing-box.initd
 "
