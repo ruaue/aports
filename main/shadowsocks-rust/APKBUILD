@@ -44,7 +44,7 @@ build() {
 		local-redir
 		local-socks4
 		local-tunnel
-    local_tun
+                local-tun
 		logging
 		manager
 		mimalloc
