@@ -2,7 +2,7 @@
 
 _flavor=virt
 pkgname=linux-$_flavor
-pkgver=6.6.32
+pkgver=6.6.36
 case $pkgver in
 	*.*.*)	_kernver=${pkgver%.*};;
 	*.*) _kernver=$pkgver;;
