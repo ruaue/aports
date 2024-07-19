@@ -1,4 +1,4 @@
-commit da644783cb2b58ba37c59121b429d101857191d4
+commit dc60f9bf5f625a0a6b6d3780333598149cc78d44
 Author: Syrone Wong <wong.syrone@gmail.com>
 Date:   Fri Apr 8 23:52:11 2022 +0800
 
@@ -7,11 +7,11 @@ Date:   Fri Apr 8 23:52:11 2022 +0800
     Signed-off-by: Syrone Wong <wong.syrone@gmail.com>
 
 diff --git a/include/libnftnl/expr.h b/include/libnftnl/expr.h
-index 9873228..22c42cf 100644
+index fba1210..0a3c6ca 100644
 --- a/include/libnftnl/expr.h
 +++ b/include/libnftnl/expr.h
-@@ -244,6 +244,12 @@ enum {
- 	NFTNL_EXPR_MASQ_REG_PROTO_MAX,
+@@ -271,6 +271,12 @@ enum {
+ 	__NFTNL_EXPR_MASQ_MAX
  };
  
 +enum {
