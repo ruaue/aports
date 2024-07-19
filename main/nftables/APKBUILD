@@ -2,8 +2,8 @@
 # Contributor: Jakub Jirutka <jakub@jirutka.cz>
 # Maintainer: Francesco Colista <fcolista@alpinelinux.org>
 pkgname=nftables
-pkgver=1.0.9
-pkgrel=1
+pkgver=1.1.0
+pkgrel=0
 pkgdesc="Netfilter tables userspace tools"
 url="https://netfilter.org/projects/nftables"
 arch="all"
@@ -32,7 +32,7 @@ subpackages="
 	py3-$pkgname-pyc
 	py3-$pkgname:_py3:noarch
 	"
-source="http://deb.debian.org/debian/pool/main/n/nftables/nftables_1.0.9.orig.tar.xz
+source="http://deb.debian.org/debian/pool/main/n/nftables/nftables_1.1.0.orig.tar.xz
 	nftables.confd
 	nftables.initd
 	nftables.nft
