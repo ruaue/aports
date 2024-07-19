@@ -1,4 +1,4 @@
-commit dc60f9bf5f625a0a6b6d3780333598149cc78d44
+commit 0ad14aef856314b19ff42ea3bfa20ff08710487f
 Author: Syrone Wong <wong.syrone@gmail.com>
 Date:   Fri Apr 8 23:52:11 2022 +0800
 
@@ -6,6 +6,18 @@ Date:   Fri Apr 8 23:52:11 2022 +0800
     
     Signed-off-by: Syrone Wong <wong.syrone@gmail.com>
 
+diff --git a/include/expr_ops.h b/include/expr_ops.h
+index 6cfb3b5..a6dbe42 100644
+--- a/include/expr_ops.h
++++ b/include/expr_ops.h
+@@ -15,6 +15,7 @@ struct attr_policy {
+ struct expr_ops {
+ 	const char *name;
+ 	uint32_t alloc_len;
++	int	max_attr;
+ 	int	nftnl_max_attr;
+ 	struct attr_policy *attr_policy;
+ 	void	(*init)(const struct nftnl_expr *e);
 diff --git a/include/libnftnl/expr.h b/include/libnftnl/expr.h
 index fba1210..0a3c6ca 100644
 --- a/include/libnftnl/expr.h
