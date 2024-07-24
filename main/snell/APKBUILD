@@ -1,0 +1,26 @@
+# Contributor: ai <apk@ai.com>
+# Maintainer: ai <apk@ai.com>
+pkgname=snell-server
+pkgver=4.0.1
+pkgrel=0
+pkgdesc="Snell is a lean encrypted proxy protocol developed by our team"
+url="https://code.visualstudio.com/"
+_update_url="https://dl.nssurge.com/snell/"
+arch="x86_64"
+license="nonfree"
+options="net"
+depends="glibc glibc-bin"
+source="$pkgname-v$pkgver.zip::$_update_url/$pkgname-v$pkgver-linux-amd64.zip"
+
+check() {
+	./snell-server --version
+}
+
+package() {
+	# snell-server
+	install -m755 -D "$srcdir"/snell-server "$pkgdir"/usr/bin/snell-server
+}
+
+sha512sums="
+69f6976de4cf38e65bb65b3a2cf51a4cea93cf508660b898d382463052a2c762a5da104f231dbb62dd3e79373443af5db60263f307c916bb24e7072c5708ed5e  vscode-cli-1.89.1.tar.gz
+"
