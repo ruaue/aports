@@ -1,0 +1,18 @@
+#!/sbin/openrc-run
+
+name=$RC_SVCNAME
+description="snell-server service"
+supervisor="supervise-daemon"
+command="/usr/bin/snell-server"
+command_args="-c /etc/snell-server/snell-server.conf"
+extra_started_commands="reload"
+
+depend() {
+	after net dns 
+}
+
+reload() {
+	ebegin "Reloading $RC_SVCNAME"
+        $supervisor "$RC_SVCNAME" --signal HUP
+	eend $?
+}
