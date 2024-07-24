@@ -2,7 +2,7 @@
 
 _flavor=virt
 pkgname=linux-$_flavor
-pkgver=6.6.39
+pkgver=6.6.41
 case $pkgver in
 	*.*.*)	_kernver=${pkgver%.*};;
 	*.*) _kernver=$pkgver;;
@@ -334,5 +334,5 @@ sha512sums="
 549d7800f03ab1a5af197c6933485ca96668a8fe1177dfc16b21db7e066e13a0cc3ee126c48d21544146b25a320936a7a90c967744bb5451910113133b1f8938  0010-nftables-fullcone.patch
 2131456d5ea96664d915de4b089e91da1e47aa9fcc7a25d997e1964c1a624c0da88c7bf403b4a6ef9ec46fddf9e5cea51102cfd6d1a894189c708d9b9ca4d59c  0011-net-tcp_brutal-make-it-as-a-built-in-kernel-module.patch
 a941a073e2b4762add3e16c5b7038de58c6d4d77f26dc2fd8bfc76c6800842131a6f125eeb682b361699b27a6d10beb754e9a951ab8f8d778a6b43e0be3df4e2  virt.x86_64.config
-9ca83bb2a4c3412a9cbaa387d58de277002851d00141f7f12379a4949d2ac11e0e857987acdecf30afbc151de6eeabbb74852b44cd9184a79b4cf9d08f3d2d73  patch-6.6.32.xz
+036656a25787683e8aacf7b576c27f02ed24d30feb9f75300586a9712f81566a4b3f4da4ac88edad458c825e76a91806c494492fd0be475233aa86b2223bfa62  patch-6.6.41.xz
 "

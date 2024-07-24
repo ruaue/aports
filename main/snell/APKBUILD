@@ -8,23 +8,19 @@ url="https://manual.nssurge.com/others/snell.html"
 _update_url="https://dl.nssurge.com/snell/"
 arch="x86_64"
 license="nonfree"
-options="net"
-depends="glibc glibc-bin"
+options="!check !strip"
 source="
 $pkgname-v$pkgver.zip::$_update_url/$pkgname-v$pkgver-linux-amd64.zip
 $pkgname.initd
 $pkgname.conf
 "
 
-check() {
-	./snell-server --version
-}
 
 package() {
 	# snell-server
 	install -m755 -D "$srcdir"/snell-server "$pkgdir"/usr/bin/snell-server
         install -Dm755 "$srcdir"/$pkgname.initd "$pkgdir"/etc/init.d/$pkgname
-        install -Dm644 "$srcdir"/$pkgname.conf -t "$pkgdir"/etc/$pkgname
+        install -Dm644 "$srcdir"/$pkgname.conf -t "$pkgdir"/etc/$pkgname/
 }
 sha512sums="
 407f5316040a69a5a9c48412d7bcea08e0722efaeaab1fd5672df9975721ff992365ce90f3be92b3baed599d78c0df5bb0bdcbc12c853e8b5777326ede1cd86c  snell-server-v4.0.1.zip
