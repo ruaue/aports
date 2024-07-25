@@ -14,7 +14,7 @@ https://github.com/fullcone-nat-nftables
 echo 'https://repo.tlle.eu.org/alpine/v3.20/main' | sudo tee -a /etc/apk/repositories
 wget https://repo.tlle.eu.org/alpine/v3.20/main/x86_64/ruaue-keys-1-r0.apk
 doas sh -c '
-apk add --allow-untrusted ./sevmonster-keys-1-r0.apk
+apk add --allow-untrusted ./ruaue-keys-1-r0.apk
 apk update \
     && apk add gcompat \
     && rm /lib/ld-linux-x86-64.so.2 \
