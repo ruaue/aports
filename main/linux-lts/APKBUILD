@@ -2,12 +2,12 @@
 
 _flavor=virt
 pkgname=linux-$_flavor
-pkgver=6.6.41
+pkgver=6.6.42
 case $pkgver in
 	*.*.*)	_kernver=${pkgver%.*};;
 	*.*) _kernver=$pkgver;;
 esac
-pkgrel=0
+pkgrel=1
 pkgdesc="Linux lts kernel"
 url="https://www.kernel.org"
 depends="initramfs-generator"
