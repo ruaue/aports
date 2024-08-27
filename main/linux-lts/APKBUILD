@@ -2,12 +2,12 @@
 
 _flavor=virt
 pkgname=linux-$_flavor
-pkgver=6.6.42
+pkgver=6.6.47
 case $pkgver in
 	*.*.*)	_kernver=${pkgver%.*};;
 	*.*) _kernver=$pkgver;;
 esac
-pkgrel=1
+pkgrel=0
 pkgdesc="Linux lts kernel"
 url="https://www.kernel.org"
 depends="initramfs-generator"
@@ -333,6 +333,6 @@ sha512sums="
 4b16f15b47b5e5835b926126e39723f519290469517875cfb2d2b857a93ad1344f0d1ba4b255289e20f4da9c867647526b344f752981cee0a48c51577badac3f  0005-powerpc-config-defang-gcc-check-for-stack-protector-.patch
 549d7800f03ab1a5af197c6933485ca96668a8fe1177dfc16b21db7e066e13a0cc3ee126c48d21544146b25a320936a7a90c967744bb5451910113133b1f8938  0010-nftables-fullcone.patch
 2131456d5ea96664d915de4b089e91da1e47aa9fcc7a25d997e1964c1a624c0da88c7bf403b4a6ef9ec46fddf9e5cea51102cfd6d1a894189c708d9b9ca4d59c  0011-net-tcp_brutal-make-it-as-a-built-in-kernel-module.patch
-a941a073e2b4762add3e16c5b7038de58c6d4d77f26dc2fd8bfc76c6800842131a6f125eeb682b361699b27a6d10beb754e9a951ab8f8d778a6b43e0be3df4e2  virt.x86_64.config
-036656a25787683e8aacf7b576c27f02ed24d30feb9f75300586a9712f81566a4b3f4da4ac88edad458c825e76a91806c494492fd0be475233aa86b2223bfa62  patch-6.6.41.xz
+932bc0eba3a7c5f8c7556e44ef34cfab6b6fa399c0eb3a2748e164d96ff9581247866403ed5001575116c5535bc4289d80c6f50b50bb04a3f6bd2b52ae03d865  virt.x86_64.config
+689be6284807380288c8232f1497a54b16db823393306e7ffe93a2972b9f411aa4b64a02cd0b27502c60a86b683c38143f4966676b3abc579e09815ae4ff9dcf  patch-6.6.47.xz
 "
