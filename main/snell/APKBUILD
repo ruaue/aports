@@ -1,7 +1,7 @@
 # Contributor: ai <apk@ai.com>
 # Maintainer: ai <apk@ai.com>
 pkgname=snell-server
-pkgver=4.1.0_beta1
+pkgver=4.1.0
 pkgrel=0
 pkgdesc="Snell is a lean encrypted proxy protocol developed by surge team"
 url="https://manual.nssurge.com/others/snell.html"
@@ -10,7 +10,7 @@ arch="x86_64"
 license="nonfree"
 options="!check !strip"
 source="
-$pkgname-v$pkgver.zip::$_update_url/$pkgname-v4.1.0b1-linux-amd64.zip
+$pkgname-v$pkgver.zip::$_update_url/$pkgname-v$pkgver-linux-amd64.zip
 $pkgname.initd
 $pkgname.conf
 "
@@ -23,7 +23,7 @@ package() {
         install -Dm644 "$srcdir"/$pkgname.conf -t "$pkgdir"/etc/$pkgname/
 }
 sha512sums="
-eb25e77880f973278bb7116ee5630b8b5388003aed156c1768e56fd19a05655bd81d0bff0449a54682d5cd37e32e3ad1ed07e1e767695bcb49b8e20aba5baefa  snell-server-v4.1.0_beta1.zip
+5cb99acd8de63ff60ccdaaf6009245a8bc48518aa2470883eba777e66cf9f4ef46ec0d3e2035ac41109cabcc42595c420cb185ee0c2f96376ce1a1539d9e8057  snell-server-v4.1.0.zip
 cffed4fe0cba272288216e637abe2a83d41993600192e35e25e2d68eaf39b6eb69de38bd2f7ae80ff8cbaff836d696e979a1ae70242cbb64ee77ca451308f716  snell-server.initd
 7223fdf8718a9c52e2685d496321ded1a436e181122bf2f93b044148cf9c30cd32c5f883dea81b4436814c8f067472323b10d22d92a16e9a336b86a97c3ed09a  snell-server.conf
 "
