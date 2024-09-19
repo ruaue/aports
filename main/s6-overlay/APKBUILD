@@ -1,0 +1,55 @@
+# Maintainer: Éric BURGHARD <eric@itsufficient.me>
+pkgname=s6-overlay
+pkgver=3.2.0.0
+pkgrel=0
+_pkgdesc="s6 overlay for containers"
+pkgdesc="$_pkgdesc"
+url="https://github.com/just-containers/s6-overlay"
+arch="all"
+license="ISC"
+options="!check"
+makedepends="xz linux-headers"
+source="$pkgname-$pkgver.tar.gz::https://github.com/just-containers/$pkgname/archive/v$pkgver.tar.gz"
+install="$pkgname.post-install"
+subpackages="$pkgname-scripts::noarch $pkgname-symlinks::noarch $pkgname-syslogd::noarch"
+builddir="$srcdir/$pkgname-$pkgver"
+options="!check suid"
+
+build() {
+	cd "$builddir"
+	make
+}
+
+package() {
+	cd "$builddir"
+	mkdir -p "$pkgdir"
+	tar xf output/$pkgname-$(uname -m).tar.xz -C "$pkgdir"
+	# remove suid flags otherwise postcheck() fails. Add it again in post-install
+	chmod -s "$pkgdir"/package/admin/s6-overlay-helpers/command/s6-overlay-suexec
+}
+
+scripts() {
+	pkgdesc="$_pkgdesc - scripts"
+	cd "$builddir"
+	mkdir -p "$subpkgdir"
+	tar xf output/$pkgname-noarch.tar.xz -C "$subpkgdir"
+}
+
+symlinks() {
+	pkgdesc="$_pkgdesc - symlinks"
+	cd "$builddir"
+	mkdir -p "$subpkgdir"
+	tar xf output/$pkgname-symlinks-noarch.tar.xz -C $subpkgdir
+	tar xf output/$pkgname-symlinks-arch.tar.xz -C $subpkgdir
+}
+
+syslogd() {
+	pkgdesc="$_pkgdesc - syslogd"
+	cd "$builddir"
+	mkdir -p "$subpkgdir"
+	tar xf output/syslogd-overlay-noarch.tar.xz -C $subpkgdir
+}
+
+sha512sums="
+305d56bd8345ae5fcdc7af9ae58ceab717a3e3f911c55d957970bf47a3cf8bd7e9df4ee80a5e5f1829dc825e462be1dbb7fdf5ff2255ba7723a0b62109256f9e  s6-overlay-3.2.0.0.tar.gz
+"
