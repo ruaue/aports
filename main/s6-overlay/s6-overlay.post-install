@@ -1,0 +1,4 @@
+#!/bin/sh
+# add SUID flags otherwise we can't package s6-overlay becaus s6-overlay-suexec is not build with PIE
+
+chmod +s /package/admin/s6-overlay-helpers/command/s6-overlay-suexec
