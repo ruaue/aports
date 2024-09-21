@@ -1,7 +1,7 @@
 # Maintainer: Sasha Gerrand <alpine-pkgs@sgerrand.com>
 
 pkgname="glibc"
-pkgver="2.40"
+pkgver="2.36"
 _pkgrel="0"
 pkgrel="1"
 pkgdesc="GNU C Library compatibility layer"
