@@ -1,6 +1,6 @@
 # Maintainer: Celeste <cielesti@protonmail.com>
 pkgname=shadowsocks-rust
-pkgver=1.18.3
+pkgver=1.18.21
 pkgrel=0
 pkgdesc="Rust port of shadowsocks"
 url="https://github.com/shadowsocks/shadowsocks-rust"
@@ -87,6 +87,8 @@ package() {
 		ssserver \
 		ssservice \
 		ssurl
+        install -Dm644 "release/config/config.json" -t "$pkgdir/etc/$pkgname"
+	install -Dm755 "$srcdir/ssserver.initd" 		"$pkgdir/etc/init.d/ssserver"
 }
 
 sslocal() {
