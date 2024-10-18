@@ -1,0 +1,30 @@
+#!/sbin/openrc-run
+
+name="shadowsocks"
+description="Shadowsocks Server"
+command="/usr/bin/ssserver"
+command_args="-c /etc/shadowsocks/config.json"
+pidfile="/run/${RC_SVCNAME}.pid"
+
+depend() {
+    need networking
+}
+
+start_pre() {
+    checkpath --directory --owner root:root --mode 0755 /run
+}
+
+start() {
+    ebegin "Starting ${name}"
+    start-stop-daemon --start --exec ${command} \
+        --pidfile ${pidfile} --make-pidfile --background \
+        -- ${command_args}
+    eend $?
+}
+
+stop() {
+    ebegin "Stopping ${name}"
+    start-stop-daemon --stop --exec ${command} \
+        --pidfile ${pidfile}
+    eend $?
+}
