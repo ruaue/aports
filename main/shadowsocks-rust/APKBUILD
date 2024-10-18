@@ -1,6 +1,6 @@
 # Maintainer: Celeste <cielesti@protonmail.com>
 pkgname=shadowsocks-rust
-pkgver=1.18.21
+pkgver=1.21.0
 pkgrel=0
 pkgdesc="Rust port of shadowsocks"
 url="https://github.com/shadowsocks/shadowsocks-rust"
