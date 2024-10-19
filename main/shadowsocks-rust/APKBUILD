@@ -105,7 +105,7 @@ ssserver() {
 	pkgdesc="$pkgdesc (ssserver binary)"
 
 	amove usr/bin/ssserver
-        install -Dm644 "release/config/config.json" -t "$pkgdir/etc/$pkgname"
+        install -Dm644 "$srcdir/config.json" -t "$pkgdir/etc/$pkgname"
 	install -Dm755 "$srcdir/ssserver.initd" 	"$pkgdir/etc/init.d/ssserver"
 }
 
