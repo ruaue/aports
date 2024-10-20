@@ -7,12 +7,12 @@ pkgdesc="Rust port of shadowsocks"
 url="https://github.com/shadowsocks/shadowsocks-rust"
 _update_url="https://github.com/shadowsocks/shadowsocks-rust/archive/refs/tags/"
 arch="x86_64"
-license="nonfree"
+license="MIT"
 options="!check !strip"
 source="
-$pkgname-v$pkgver.tar.gz::$_update_url/$pkgname-v$pkgver.tar.gz
-$pkgname.initd
-$pkgname.conf
+$pkgname-v$pkgver.tar.gz::$_update_url/v$pkgver.tar.gz
+ssserver.initd
+config.json
 "
 
 
