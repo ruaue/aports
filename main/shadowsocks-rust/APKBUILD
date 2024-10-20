@@ -5,13 +5,14 @@ pkgver=1.21.0
 pkgrel=0
 pkgdesc="Rust port of shadowsocks"
 url="https://github.com/shadowsocks/shadowsocks-rust"
-_update_url="https://github.com/shadowsocks/shadowsocks-rust/archive/refs/tags/"
+_update_url="https://github.com/shadowsocks/shadowsocks-rust/releases/download/v$pkgver/"
+
 arch="x86_64"
 license="MIT"
 options="!check !strip"
 source="
-$pkgname-v$pkgver.tar.gz::$_update_url/v$pkgver.tar.gz
-ssserver.initd
+shadowsocks-v$pkgver.$arch-unknown-linux-musl.tar.xz::$_update_url/shadowsocks-v$pkgver.$arch-unknown-linux-musl.tar.xz
+ssserver.init
 config.json
 "
 
@@ -19,11 +20,11 @@ config.json
 package() {
 	# shadowsocks-rust-server
 	install -m755 -D "$srcdir"/ssserver "$pkgdir"/usr/bin/ssserver
-        install -Dm755 "$srcdir"/ssserver.initd "$pkgdir"/etc/init.d/ssserver
+        install -Dm755 "$srcdir"/ssserver.init "$pkgdir"/etc/init.d/ssserver
         install -Dm644 "$srcdir"/config.json -t "$pkgdir"/etc/$pkgname/
 }
 sha512sums="
-cb2eef7e07bbd84291ed5ca1734f271dd361a789037b8295cb61472b4b0beb51c43b290b8b8e0cf0cd57f4d23ab09ecad15e44ce12b2758f8f455610e5bc4b09  snell-server-v4.1.1.zip
-cffed4fe0cba272288216e637abe2a83d41993600192e35e25e2d68eaf39b6eb69de38bd2f7ae80ff8cbaff836d696e979a1ae70242cbb64ee77ca451308f716  snell-server.initd
-7223fdf8718a9c52e2685d496321ded1a436e181122bf2f93b044148cf9c30cd32c5f883dea81b4436814c8f067472323b10d22d92a16e9a336b86a97c3ed09a  snell-server.conf
+cc3268dfab6ac159b0cd2444bee9222a15c5ebcd738d5b8d742f5568dab1e02ef13d49da0bd5b2b335f1fb9ea9630c9fbf72154de672ec566ed7de8bd4da4773  shadowsocks-v1.21.0.x86_64-unknown-linux-musl.tar.xz
+0ff86148e14f221ff72d48c088860568f5f540e1c01beed0b95d983ed331d916229ea289618d83d1de71601ff879732eb67c16d77118d7522e66779a14bf3dc4  ssserver.init
+b931de27c3d505a592b9849ecba6ebc7c38b293c608fe6dcc59dc6b62f75a783125ff7c6072c1eb86e6fa8dfd4fd392085a7fd8dab22a210befb373b71172758  config.json
 "
